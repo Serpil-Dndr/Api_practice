@@ -4,7 +4,7 @@ import baseUrl.HerOkuBaseUrl;
 import baseUrl.JsonPlaceHolderURL;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
+import static org.hamcrest.Matchers.*;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
@@ -53,8 +53,6 @@ public class C09_practice extends JsonPlaceHolderURL {
                 .header("Server","cloudflare")
                 .statusLine("HTTP/1.1 200 OK");
 
-
-
     }
     @Test
     public void get02(){
@@ -68,8 +66,34 @@ public class C09_practice extends JsonPlaceHolderURL {
                .assertThat()
                .statusCode(200)
                .contentType("application/json; charset=utf-8")
-               .body("userId",Matchers.equalTo(5)
-                       ,"title",Matchers.equalTo("optio dolor molestias sit"));
+               .body("userId",equalTo(5)
+                       ,"title",equalTo("optio dolor molestias sit"));
+
+    }
+
+    @Test
+    public void post01(){
+        String url ="https://jsonplaceholder.typicode.com/posts";
+        JSONObject reqBody = new JSONObject();
+        reqBody.put("title","API");
+        reqBody.put("body","API ogrenmek ne guzel");
+        reqBody.put("userId",10);
+
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .when()
+                .body(reqBody.toString())
+                .post(url);
+         response.prettyPrint();
+        response.then()
+                .assertThat()
+                .statusCode(201)
+                .contentType("application/json; charset=utf-8")
+                .body("title",equalTo("API")
+                        ,"userId",lessThan(100)
+                        ,"body",containsString("API"));
+
+
 
     }
 
