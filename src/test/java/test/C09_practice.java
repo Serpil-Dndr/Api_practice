@@ -4,6 +4,8 @@ import baseUrl.HerOkuBaseUrl;
 import baseUrl.JsonPlaceHolderURL;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.urlEncodingEnabled;
 import static org.hamcrest.Matchers.*;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
