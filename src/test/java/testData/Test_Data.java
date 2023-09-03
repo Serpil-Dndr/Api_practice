@@ -4,7 +4,7 @@ import org.json.JSONObject;
 
 public class Test_Data {
     public int statusCode = 200;
-    public String contentType ="application/json";
+    public String contentType ="application/json; charset=utf-8";
     //application/json
     //application/json; charset=utf-8
     public String header = "keep-alive";

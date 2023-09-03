@@ -10,7 +10,7 @@ import testData.Test_Data;
 
 import static io.restassured.RestAssured.given;
 
-public class C19_Test_Data_Dummy extends dummyBaseUrl {
+public class C20_Test_Data_Dummy extends dummyBaseUrl {
     @Test
     public void test01(){
         //1.url hazirla
@@ -34,7 +34,7 @@ public class C19_Test_Data_Dummy extends dummyBaseUrl {
         Assert.assertEquals(expData.getJSONObject("data").get("employee_salary"),resJson.get("data.employee_salary"));
         Assert.assertEquals(expData.getJSONObject("data").get("employee_age"),resJson.get("data.employee_age"));
         Assert.assertEquals(expData.getJSONObject("data").get("profile_image"),resJson.get("data.profile_image"));
-      //  Assert.assertEquals(expData.getJSONObject("message"),resJson.get("message"));
+
 
 
     }

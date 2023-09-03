@@ -11,7 +11,7 @@ import testData.Test_Data;
 
 import static io.restassured.RestAssured.given;
 
-public class Test_Data_Kullanimi_JsonPlaceHolder extends JsonPlaceHolderURL {
+public class C19_Test_Data_Kullanimi_JsonPlaceHolder extends JsonPlaceHolderURL {
 
     @Test
     public void test01(){
@@ -48,12 +48,12 @@ public class Test_Data_Kullanimi_JsonPlaceHolder extends JsonPlaceHolderURL {
               .body(reqBody.toString())
               .when()
               .put("/{pp1}/{pp2}");
-      response.prettyPrint();
+     // response.prettyPeek();
       //5.Assertion
         JsonPath resJS = response.jsonPath();
       Assert.assertEquals(testData.statusCode,response.getStatusCode());
       Assert.assertEquals(testData.contentType,response.getContentType());
-    //  Assert.assertEquals(testData.header,response.getHeaders()); //????????????
+      Assert.assertEquals(testData.header,response.getHeader("Connection")); //????????????
       Assert.assertEquals(expData.get("title"),resJS.get("title"));
       Assert.assertEquals(expData.get("body"),resJS.get("body"));
       Assert.assertEquals(expData.get("userId"),resJS.get("userId"));

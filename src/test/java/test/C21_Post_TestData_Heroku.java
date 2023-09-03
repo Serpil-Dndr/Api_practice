@@ -11,7 +11,7 @@ import testData.HerOkuTestData;
 
 import static io.restassured.RestAssured.given;
 
-public class C20_Post_TestData_Heroku extends HerOkuBaseUrl {
+public class C21_Post_TestData_Heroku extends HerOkuBaseUrl {
     @Test
     public void test01(){
         //Url hazirla
