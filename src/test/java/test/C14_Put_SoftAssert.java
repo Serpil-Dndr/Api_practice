@@ -9,7 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
-public class Put_SoftAssert {
+public class C14_Put_SoftAssert {
 
     @Test
     public void test01(){

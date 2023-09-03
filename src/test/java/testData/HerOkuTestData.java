@@ -3,6 +3,11 @@ package testData;
 import org.json.JSONObject;
 
 public class HerOkuTestData {
+    public int statusCode = 200;
+    public String contentType ="application/json; charset=utf-8";
+    //application/json
+    //application/json; charset=utf-8
+    public String header = "keep-alive";
     public int succesStatusCode = 200;
     public JSONObject createBookingDateJSON(){
 
@@ -19,8 +24,8 @@ public class HerOkuTestData {
 
         JSONObject booking = new JSONObject();
 
-        booking.put("firstname" , "Ali");
-        booking.put("lastname" , "Bak");
+        booking.put("firstname" , "Ahmet");
+        booking.put("lastname" , "Bulut");
         booking.put("totalprice" , 500);
         booking.put("depositpaid" ,false);
         booking.put("additionalneeds" , "wi-fi");

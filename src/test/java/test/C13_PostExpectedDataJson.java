@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
-public class PostExpectedDataJson extends HerOkuBaseUrl {
+public class C13_PostExpectedDataJson extends HerOkuBaseUrl {
 
     @Test
     public void post01(){

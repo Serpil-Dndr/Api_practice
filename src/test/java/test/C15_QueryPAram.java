@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class QueryPAram extends HerOkuBaseUrl {
+public class C15_QueryPAram extends HerOkuBaseUrl {
 
     @Test
     public void test01(){
